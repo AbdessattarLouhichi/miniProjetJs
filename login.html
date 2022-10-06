@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 4.6.x CDN-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <!-- CSS Personnalisé-->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Se connecter</title>
+</head>
+<body class="bg-light">
+    <!-- header section-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mb-5">
+    <a class="navbar-brand" href="./index.html#home"><img src="images/logo.png" alt="" width="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html#home">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="product.html">Produits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html#about">A propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html#contact">Contact</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a class="btn btn-outline-success mr-sm-2 my-2 my-sm-0" type="submit" href="login.html">Se connecter</a>
+        <a class="btn btn-success  my-2 my-sm-0" type="submit" href="register.html">S'inscrire</a>
+      </form>
+    </div>
+  </nav>
+  <!-- hearer section End-->
+  <!-- Main content .form-group start -->
+    <div class="container justify-content-center pt-5 "> 
+        <div class="row d-flex justify-content-center">
+            <div class="col-3"></div>
+            <div class="col-10 col-md-6 bg-white my-5 ">
+                <!-- Formulaire de login -->
+                <form class="m-4 ">
+                    <div class="form-group">
+                        <label for="mail">E-mail :</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Saisissez votre adress e-mail ici">
+                        <div class="invalid-feedback">L'adresse e-mail est invalid</div>
+                    </div>
+                    <!-- input type password #pw-->
+                    <div class="form-group">
+                        <label for="pw">Mot de passe :</label>
+                        <input type="password" class="form-control" id="pw" placeholder="Saisissez votre mot de passe ici">
+                        <div class="invalid-feedback">Le mot de passe est obligatoire</div>
+                    </div>
+                    <button id="signIn" type="submit" class="btn btn-success text-white btn-block">Connexion</button>
+                </form>
+                <div class="text-center my-3">
+                    <a href="register.html">s'inscrire</a>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>   
+       
+    </div>
+ <!-- Main content .form-group End -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+    <!-- customized Js-->
+    <script src="js/login.js"></script>
+</body>
+</html>
