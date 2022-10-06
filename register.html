@@ -52,15 +52,15 @@
             <h1 class="text-center text-primary my-4">Créer votre compte</h1>
             <!-- input type text #nom-->
             <div class="form-group">
-                <label for="name">Nom :</label>
-                <input type="text" class="form-control" id="name" placeholder="Saisissez votre nom ici"
+                <label for="lastName">Nom :</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Saisissez votre nom ici"
                     >
                 <div class="invalid-feedback">Le nom est obligatoire.</div>
             </div>
              <!-- input type text #prenom-->
             <div class="form-group">
-                <label for="lastName">Prénom:</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Saisissez votre prénom ici"
+                <label for="name">Prénom:</label>
+                <input type="text" class="form-control" id="name" placeholder="Saisissez votre prénom ici"
                     >
                 <div class="invalid-feedback">Le prénom est obligatoire.</div>
             </div>
@@ -69,13 +69,13 @@
                 <label for="inputEmail">E-mail :</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Saisissez votre adresse e-mail ici"
                     >
-                <div class="invalid-feedback">L'adresse e-mail est invalid</div>
+                <div class="invalid-feedback" id="errorEmail"></div>
             </div>
             <!-- input type password #password-->
             <div class="form-group">
                 <label for="password">Mot de passe:</label>
                 <input type="password" class="form-control" id="password" placeholder="Saisissez votre  mot de passe ici" >
-                <div class="invalid-feedback">Le mot de passe est obligatoire.</div>
+                <div id="ErrorPw" class="invalid-feedback"></div>
             </div>
             <!-- input type password #confirm-->
             <div class="form-group">
