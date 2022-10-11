@@ -9,7 +9,7 @@
   integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <!-- CSS Personnalisé-->
   <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>S'inscrire</title>
+    <title>dashbord</title>
 </head>
 <body class="bg-light">
     <!-- header section-->
@@ -26,7 +26,7 @@
           <a class="nav-link" href="./index.html#home">Accueil <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="product.html">Produits</a>
+          <a class="nav-link" href="#">Produits</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./index.html#about">A propos</a>
@@ -41,58 +41,43 @@
       </form>
     </div>
   </nav>
-  <!-- hearer section End-->
-  <!-- Main content .form-group start -->
+  <!-- header section End-->
+
+  <!-- Main section Start-->
   <div class="container justify-content-center pt-5 "> 
     <div class="row d-flex justify-content-center">
-        <div class="col-3"></div>
-        <div class="col-10 col-md-6 bg-white my-5 rounded">
-            <!-- Formulaire d'inscription-->
-        <form class="justify-content-center" >
-            <h1 class="text-center text-primary my-4">Créer votre compte</h1>
-            <!-- input type text #nom-->
-            <div class="form-group">
-                <label for="lastName">Nom :</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Saisissez votre nom ici">
-                <div class="invalid-feedback">Le nom est obligatoire.</div>
-            </div>
-             <!-- input type text #prenom-->
-            <div class="form-group">
-                <label for="name">Prénom:</label>
-                <input type="text" class="form-control" id="name" placeholder="Saisissez votre prénom ici"
-                    >
-                <div class="invalid-feedback">Le prénom est obligatoire.</div>
-            </div>
-             <!-- input type email #inputEmail-->
-            <div class="form-group">
-                <label for="inputEmail">E-mail :</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Saisissez votre adresse e-mail ici"
-                    >
-                <div class="invalid-feedback" id="errorEmail"></div>
-            </div>
-            <!-- input type password #password-->
-            <div class="form-group">
-                <label for="password">Mot de passe:</label>
-                <input type="password" class="form-control" id="password" placeholder="Saisissez votre  mot de passe ici" >
-                <div id="ErrorPw" class="invalid-feedback"></div>
-            </div>
-            <!-- input type password #confirm-->
-            <div class="form-group">
-                <label for="confirmPw">Confirmation mot de passe :</label>
-                <input type="password" class="form-control" id="confirmPw" placeholder="Saisissez votre  mot de passe ici" >
-                <div class="invalid-feedback">La confirmation est obligaoire, ou bien la confirmation est invalid</div>
-            </div>
-            <button id="signUp" type="submit" class="btn btn-success btn-block">S'inscrire</button>
-        </form>
-        <div class="text-center my-3">
-          <a href="login.html">Se connecter</a>
-      </div>
+        <div class="col-1"></div>
+        <div class="col-10 col-md-10 bg-success my-5 p-3 rounded">
+            <!-- Add Produt input form -->
+            <form>
+              <!-- Product Name input type text -->
+              <div class="form-group">
+                <label for="productName" class="font-weight-bold">Produit</label>
+                <input type="text" class="form-control" id="productName" placeholder=" nouveau produit">
+                <div class="invalid-feedback">Le nom de produit est obligatoire.</div>
+              </div>
+              <!-- Product Description input textarea-->
+              <div class="form-group">
+                <label for="description" class="font-weight-bold">Description</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+                <div class="invalid-feedback">Veuillez entrer la desciption de produit</div>
+              </div>
+              <!-- Product photo input type file -->
+              <div class="form-group">
+                <label for="productImg" class="font-weight-bold">Ajouter Photo</label>
+                <input type="file" class="form-control-file" id="productImg">
+              </div>
+              <!--Click button  to add product-->
+              <button  type="button" onclick="addProduct()" class="btn btn-light font-weight-bold">Ajouter Produit</button>
+            
+            </form>
         </div>
-        <div class="col-3"></div>
+        <div class="col-1"></div>
     </div>   
    
 </div>
-<!-- Main content .form-group End -->
+  
+  <!-- Main section End-->
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -105,6 +90,6 @@
   integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
   crossorigin="anonymous"></script>
   <!-- customized Js-->
-  <script src="js/register.js"></script>
+  <script src="js/dashbord.js"></script>
 </body>
 </html>
