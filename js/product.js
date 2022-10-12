@@ -6,12 +6,19 @@ var tbody = document.getElementById('tbody');
 // create  Products array from localStorage
 var Products = JSON.parse(localStorage.getItem('product')) || [];
 
+const arrayByCatogry = Object.values(
+    Products.reduce((acc,curr)=>(
+      (acc[curr.category] = acc[curr.category] || []).push(curr), acc
+    ), {})
+  );
+ 
 // Create a List of products
 function ProductList() {
     Products.map((product,index)=>{
         tbody.innerHTML+= `
         <tr>
             <td>${product.name}</td>
+            <td>${product.category}</td>
             <td>${product.description}</td>
             <td><img src='${product.productImg}'width ="50px"></td>
 
@@ -33,13 +40,16 @@ function saveIndex(i) {
 }
 // Display data in Modal Popup
 function showData(i) {
-    var name = document.getElementById('productName')
-   var description = document.getElementById('description')
+    let name = document.getElementById('productName');
+    let description = document.getElementById('description');
+    let category = document.getElementById('productCategory');
+    let image = document.getElementById('productImg')
    
     console.log(Products[i]);
-   name.value = Products[i].name
-   description.value = Products[i].description
-  
+   name.value = Products[i].name;
+   category.value = Products[i].category
+   description.value = Products[i].description;
+   
    saveIndex(i)
 }
 
@@ -50,16 +60,34 @@ function Supprimer(i) {
     window.location.reload()
 }
 
+// Function to converte image to Base 64
+const toBase64 = file  => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+    });
+
 // Click #update buton to save changes
 var update = document.getElementById('update');
-update.addEventListener('click', function () {
-    var name = document.getElementById('productName');
-    var description = document.getElementById('description');
+update.addEventListener('click', async function () {
+    let name = document.getElementById('productName');
+    let description = document.getElementById('description');
+    let category = document.getElementById('productCategory');
+    let image= document.getElementById('productImg');
+
+    let base64 = "";
+    if(image.files.length>0){   
+        base64 = await toBase64(image.files[0]);     
+    }else{
+        base64 = Products[index].productImg;
+    }
  
-   var data = {
+   let data = {
     name: name.value,
     description : description.value,
-    productImg : Products[index].productImg
+    category : category.value,
+    productImg : base64
    }
    
    // replace selected item from Products array with data

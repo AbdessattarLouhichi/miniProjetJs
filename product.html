@@ -15,6 +15,7 @@
 </head>
 <body onload="ProductList()">
     <!-- header section-->
+  <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
     <a class="navbar-brand" href="./index.html#home"><img src="images/logo.png" alt="" width="50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -43,23 +44,25 @@
       </form>
     </div>
   </nav>
+</div>
   <!-- header section End-->
   <!-- Main product section Start-->
   <section class="" style="background-color: #eee;">
     <div class="container py-5 ">
-      <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="row d-flex justify-content-center align-items-center  mt-5">
         <div class="col-md-12 col-xl-10">
-          <a href="/dashbord.html">Ajouter un produit</a>
           <div class="card">
-            <div class="card-header p-3 bg-success">
+            <div class="card-header p-3 bg-success d-flex justify-content-between stiky-top">
               <h5 class="mb-0"><i class="fa-solid fa-list-check mr-3"></i>Liste de Produits</h5>
+              <a href="/dashbord.html" class="btn btn-light font-weight-bold">Ajouter un produit</a>
             </div>
             <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; ">
-  
+
               <table class="table mb-0">
                 <thead>
                   <tr>
                     <th scope="col">Nom de produit</th>
+                    <th scope="col">Catégorie</th>
                     <th scope="col">Description</th>
                     <th scope="col">Photo</th>
                     <th scope="col">Actions</th>
@@ -118,6 +121,14 @@
               <label for="description" class="font-weight-bold">Description</label>
               <textarea class="form-control" id="description" rows="3"></textarea>
             </div>
+            <div class="form-group">
+              <label for="productCategory" class="font-weight-bold">Catégorie</label>
+              <input type="text" class="form-control" id="productCategory" placeholder="catégorie de produit ">
+            </div>
+          </div>
+          <div class="form-group px-4">
+            <label for="productImg" class="font-weight-bold">Ajouter Photo</label>
+            <input type="file" class="form-control-file" id="productImg">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -141,6 +152,6 @@
   crossorigin="anonymous"></script>
   <!-- customized Js-->
   <script src="js/product.js"></script>
-  <script src="js/dashbord.js"></script>
+ <!-- <script type="module" src="js/dashbord.js"></script> -->
 </body>
 </html>
