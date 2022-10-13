@@ -1,6 +1,8 @@
 
 var tbody = document.getElementById('tbody');
 
+//create Categories arrya from localStorage
+var Categories= JSON.parse(localStorage.getItem('category')) || [];
 
 // create  Products array from localStorage
 var Products = JSON.parse(localStorage.getItem('product')) || [];
@@ -11,7 +13,8 @@ const arrayByCategory = Object.values(
       (acc[curr.category] = acc[curr.category] || []).push(curr), acc
     ), {})
   );
- console.log(arrayByCategory);
+ console.log(arrayByCategory[1]);
+
 // Window.onload (Create a List of products from Products array )
 function ProductList() {
     Products.map((product,index)=>{
@@ -42,12 +45,19 @@ function saveIndex(i) {
 function showData(i) {
     let name = document.getElementById('productName');
     let description = document.getElementById('description');
-    let category = document.getElementById('productCategory');
-    let image = document.getElementById('image')
+    let categorySelect = document.getElementById('category-select');
+    let image = document.getElementById('image');
+
+     //Create categories select options 
+     Categories.map((category,index)=>{
+        categorySelect.innerHTML+= `
+        <option value="${category.categoryName}">${category.categoryName}</option>`
+    })
+
    
-    console.log(Products[i]);
+    //console.log(Products[i]);
    name.value = Products[i].name;
-   category.value = Products[i].category
+   categorySelect.value = Products[i].category
    description.value = Products[i].description;
    image.src = Products[i].productImg;
    
@@ -75,9 +85,9 @@ var update = document.getElementById('update');
 update.addEventListener('click', async function () {
     let name = document.getElementById('productName');
     let description = document.getElementById('description');
-    let category = document.getElementById('productCategory');
+    let categorySelect = document.getElementById('category-select');
     let image= document.getElementById('productImg');
-
+    
     let base64 = "";
     if(image.files.length>0){   
         base64 = await toBase64(image.files[0]);     
@@ -88,7 +98,7 @@ update.addEventListener('click', async function () {
    let data = {
     name: name.value,
     description : description.value,
-    category : category.value,
+    category : categorySelect.value,
     productImg : base64
    }
    
