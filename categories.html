@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Produits</title>
 </head>
-<body onload="ProductList()">
+<body>
     <!-- header section-->
   <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top ">
@@ -26,50 +26,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="./index.html#home">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="./index.html#home">Accueil <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Produits</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html#about">A propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html#contact">Contact</a>
+          <a class="nav-link" href="dashbord.html">Dashbord</a>
         </li>
       </ul>
+      <div class="input-group rounded col-3 mx-3 ">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+      </div>
       <form class="form-inline my-2 my-lg-0">
-        <a class="btn btn-outline-success mr-sm-2 my-2 my-sm-0" type="submit" href="login.html">Se connecter</a>
-        <a class="btn btn-success  my-2 my-sm-0" type="submit" href="register.html">S'inscrire</a>
+        <a  href="login.html">
+          <img src="https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-business-male-icon-vector-png-image_916468.jpg"
+           class="img-fluid rounded-circle" width="50px" alt="">
+        </a>
       </form>
     </div>
   </nav>
 </div>
   <!-- header section End-->
-  <!-- Main product section Start-->
+  <!-- Main Category section Start-->
   <section class="" style="background-color: #eee;">
     <div class="container py-5 ">
       <div class="row d-flex justify-content-center align-items-center  mt-5">
         <div class="col-md-12 col-xl-10">
           <div class="card">
             <div class="card-header p-3 bg-success d-flex justify-content-between stiky-top">
-              <h5 class="mb-0"><i class="fa-solid fa-list-check mr-3"></i>Liste de Produits</h5>
-              <a href="/dashbord.html" class="btn btn-light font-weight-bold">Ajouter un produit</a>
+              <h5 class="mb-0"><i class="fa-solid fa-list-check mr-3"></i>Liste de categories</h5>
+              <a href="/addCategory.html" class="btn btn-light font-weight-bold">Ajouter catégorie</a>
             </div>
             <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; ">
 
               <table class="table mb-0">
                 <thead>
                   <tr>
-                    <th scope="col">Nom de produit</th>
-                    <th scope="col">Catégorie</th>
+                    <th scope="col">Nom de catégorie</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Photo</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody id="tbody">
-                   <!-- Create a Product List-->               
+                   <!-- Create a category List-->               
                 </tbody>
               </table>
             </div>
@@ -77,33 +74,10 @@
         </div>
       </div>
     </div>
-    <!-- Template Start-->
-    <template id="rowList">
-      <tr class="font-weight-normal">
-        <th>
-          <img src=""
-            class="shadow-1-strong rounded-circle" alt=""
-            style="width: 55px; height: auto;">
-          <span class="ml-2"></span>
-        </th>
-        <td class="align-middle">
-          <span></span>
-        </td>
-        <td class="align-middle">
-           <!-- Button trigger modal -->
-          <a href="#!" data-mdb-toggle="tooltip" title="Done" class="edit"><i
-              class="fas fa-pencil-alt text-success mr-3"></i></a>
-          <a href="#!" data-mdb-toggle="tooltip" title="Remove" class="remove"><i
-              class="fas fa-trash-alt text-danger"></i></a>
-        </td>
-      </tr>
-      
-    </template>
-    <!-- Template End-->
 
-    <!-- Modal Edit Product Start -->
-    <!-- Modal to edit Product -->
-    <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
+    <!-- Modal to edit Category Start -->
+   
+    <div class="modal fade" id="editCateg" tabindex="-1" aria-labelledby="editModal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -114,22 +88,14 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="productName" class="font-weight-bold">Produit</label>
-              <input type="text" class="form-control" id="productName">
+                <label for="categoryName" class="font-weight-bold">Catégorie</label>
+                <input type="text" class="form-control" id="categoryName" placeholder=" nouveau catégorie">
             </div>
+              <!-- Category Description input textarea-->
             <div class="form-group">
-              <label for="description" class="font-weight-bold">Description</label>
-              <textarea class="form-control" id="description" rows="3"></textarea>
+                <label for="categDescription" class="font-weight-bold">Description</label>
+                <textarea class="form-control" id="categDescription" rows="3"></textarea>
             </div>
-            <div class="form-group">
-              <label for="productCategory" class="font-weight-bold">Catégorie</label>
-              <input type="text" class="form-control" id="productCategory" placeholder="catégorie de produit ">
-            </div>
-          </div>
-          <div class="form-group px-4">
-            <label for="productImg" class="font-weight-bold">Ajouter Photo</label>
-            <input type="file" class="form-control-file" id="productImg">
-          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             <button type="button" id="update" class="btn btn-primary">Enregistrer</button>
@@ -139,7 +105,7 @@
     </div>
     <!-- Modal Edit Product End -->
   </section>
-    <!-- Main Product section End-->
+    <!-- Main Category  section End-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -151,7 +117,7 @@
   integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
   crossorigin="anonymous"></script>
   <!-- customized Js-->
-  <script src="js/product.js"></script>
- <!-- <script type="module" src="js/dashbord.js"></script> -->
+  <script src="js/categories.js"></script>
+ 
 </body>
 </html>
